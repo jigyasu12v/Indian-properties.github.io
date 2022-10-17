@@ -13,7 +13,7 @@
     <header class="bk">
        <a href="#home" class="logo" style="text-decoration:none"><sup>🏠</sup><span>Indian</span>Properties</a>
  
-        <nav class="navbar">
+        <nav class="navbar" id="Menulist">
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             <a href="#Properties">Properties</a>
@@ -23,7 +23,7 @@
         </nav>
         <div>
           <div class="icons">
-              <div id="menu-bars" class="fas fa-bars"></div>
+              <div id="menu-bars" class="fas fa-bars" onclick="togglemenu()" ></div>
               <a href="newuser.html" class="fas fa-user"></a>
               <a href="fav.html" class="fas fa-heart" style="text-decoration:none"></a>
           </div>  
@@ -228,6 +228,22 @@
 </footer>
 
 
+<script>
+
+var Menulist = document.getElementById("Menulist");
+
+Menulist.style.maxHeight = "0px";
+function togglemenu(){
+
+    if(Menulist.style.maxHeight =="0px")
+    {
+        Menulist.style.maxHeight = "230px"
+    }
+    else{
+        Menulist.style.maxHeight = "0px"
+    }
+}
+</script>
 
 </body>
 </html>

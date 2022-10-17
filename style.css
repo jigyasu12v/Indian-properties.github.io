@@ -281,11 +281,7 @@ input[type="submit"] {
     border-radius: 2rem;
     
   }
-  .prop-container{
-    background:rgba(226 0 0 0.7);
-    width: 1000px;
-  }
-  
+ 
   
 
 
@@ -343,8 +339,7 @@ header{
      header nav{
          left: 0; right: 0; top: 100%;
          position: absolute;
-         transition: .2s linear;
-         background: #f7f7f7;
+         background:black;
          border-top: .1rem solid #333;
          border-bottom: .1rem solid #333;
          
@@ -355,17 +350,67 @@ header{
      header nav a{
         padding: 1.5rem;
         margin: 1.5rem;
-        display: block;
+        display: none;
         border: .1rem solid #333;
-        background: #fff;
+        background: gold;
         box-shadow: 0 .5rem 1rem rgba(0 0 0 1);
         border-radius: 0.5rem;
     }
   
      
 }
-@media (max-width:465px){
-    html{
-        font-size: 50%;
+@media (max-width:500px){
+
+    section{
+        width: 470px;
+        height: 800px;
     }
+   header nav a{
+    display: block;
+   }
+   #Menulist{
+    overflow: hidden;
+    transition: 0.5s;
+   }
+   header .navbar a{
+    color: brown;
+   }
+
+html{
+    margin: 0%;
+    padding: 0%;
 }
+.row{
+    width: 100%;
+    display: list-item;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px;
+}
+.base{
+    width: 400px;
+    padding: 0%;
+    padding-left: 0%;
+    align-items: center;
+    padding-right: 0%;
+    margin: 2px;
+
+
+}
+.pro{
+    padding-left: 10%;
+}
+.background{
+    padding-left: 20%;
+}
+.circle{
+    display: block;
+}
+form{
+    padding-bottom: 25rem;
+}
+     
+
+    }
+
+

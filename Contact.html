@@ -11,7 +11,8 @@
 </head>
 <body>
     
-    <form action="connection.php" method="post">
+    <form onsubmit = "mail(); reset(); return false;">
+    
 
    
         <legend> <h1 class="background" id="Contact">Contact Us</h1> </legend>
@@ -19,23 +20,22 @@
                      <div>
                          <h2 class="Cont">Your Name:</h2>
                            <p id="same">
-                     <input type="text" name="Name" placeholder="Your full Name" required>
+                     <input type="text" name="Name" id="name" placeholder="Your full Name" required>
                         </p>
                             <h2 class="Cont">Your Email:</h2>
                     <p id="same">
               <input type="text" name="email" placeholder="Your Email"  id="email" required>
                     </p>
    
-                    <h2 class="gend">Gender:   
+                    <h2 class="gend">Subject:
                     </h2>
-                    <p id="same">
-                       Male<input type="radio" value="m" name="Gender" >
-                       Female<input type="radio" value="f" name="Gender">
-                       Others<input type="radio" value="o" name="Gender">
+                    <p>
+                    <input type="text" name="Subject" id="Subject" placeholder="Topic for the matter" required>
                     </p>
+                    
            <h2 class="phone"> Phone No.</h2>
            <p>
-               <input type="number" name="phone" value="number">
+               <input type="number" id="phone" name="phone" value="number">
            </p>
                      
                              <h2>
@@ -113,5 +113,38 @@
     </div>
 
 </footer>
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script>
+    function mail(){
+    
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let Subject = document.getElementById("Subject").value;
+        let phone = document.getElementById("phone").value;
+        let mess = document.getElementById("mess").value;
+
+
+
+
+
+
+
+
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "propertiesindian00@gmail.com",
+    Password : "BDFE4C99EAEDCE8DAB22526E6934F004C0FC",
+    To : 'jigyasuwork@gmail.com',
+    From : "propertiesindian00@gmail.com",
+    Subject : "Mail from Contact form",
+    Body : "Name:" + name + "<br> Email:" + email + "<br> Subject:" + Subject + "<br> Contact No.:" + phone + "<br> Message by user:" +mess
+}).then(
+  message => alert(message)
+);
+    }
+</script>
 </body>
 </html>

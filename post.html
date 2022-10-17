@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    
+    <form onsubmit = "mail(); reset(); return false;">
     <h1 class="background" id="post">Post Property</h1>
 
     <br>
@@ -20,9 +20,9 @@
          <h3><b>Personal Details</b></h3>
          
          <p>
-             I am  : <input type="radio" name="personal" id="own"> Owner
-             <input type="radio" name="personal" id="agen"> Agent
-             <input type="radio" name="personal" id="Build"> Builder
+             I am  : <input type="radio" name="personal" id="own" value="O"> Owner
+             <input type="radio" name="personal" id="agen" value="A"> Agent
+             <input type="radio" name="personal" id="Build" value="B"> Builder
          </p>
          <p>
              Contact No. <input type="number" name="" id="">
@@ -93,6 +93,7 @@
         <input class="post" type="submit" value="Post Now">
     </p>
     </fieldset>
+</form>
     <footer>
         <div class="row">
             <div class="col">
@@ -153,5 +154,34 @@
         </div>
     
     </footer>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script>
+        function mail(){
+
+
+        let owner = document.getElementById("own").value;
+        let Agent = document.getElementById("agen").value;
+        let builder = document.getElementById("Build").value;
+        
+        
+
+
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "propertiesindian00@gmail.com",
+    Password : "BDFE4C99EAEDCE8DAB22526E6934F004C0FC",
+    To : 'jigyasuwork@gmail.com',
+    From : "propertiesindian00@gmail.com",
+    Subject : "Property user want to post",
+    Body : "  I am : " + owner + Agent + ""
+}).then(
+  message => alert(message)
+);
+        }
+    </script>
+
 </body>
 </html>
