@@ -135,14 +135,14 @@
 
         Email.send({
     Host : "smtp.elasticemail.com",
-    Username : "propertiesindian00@gmail.com",
-    Password : "BDFE4C99EAEDCE8DAB22526E6934F004C0FC",
-    To : 'jigyasuwork@gmail.com',
-    From : "propertiesindian00@gmail.com",
+    Username : "jigyasuwork@gmail.com",
+    Password : "30E625779E926B5FD20E201F44BD7CF5320D",
+    To : 'propertiesindian00@gmail.com',
+    From : "jigyasuwork@gmail.com",
     Subject : "Mail from Contact form",
     Body : "Name:" + name + "<br> Email:" + email + "<br> Subject:" + Subject + "<br> Contact No.:" + phone + "<br> Message by user:" +mess
 }).then(
-  message => alert(message)
+  message => alert("Message Sent Successfully")
 );
     }
 </script>
